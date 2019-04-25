@@ -1,0 +1,10 @@
+name: wrangling
+dependencies:
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - requests
+  - json
+  - tweepy
+  - jupyter
