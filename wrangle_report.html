@@ -13301,7 +13301,7 @@ We focus on the issues according to the objective we had for the insights : Try 
 <h4 id="Quality-issues-identified-:">Quality issues identified :<a class="anchor-link" href="#Quality-issues-identified-:">&#182;</a></h4><ol>
 <li>The WeRateDgos twitter archive enhanced contains retweets, which could not be part or our study</li>
 <li>The WeRateDgos twitter archive enhanced has 59 missing value from the "expanded_urls" column</li>
-<li>In the The WeRateDgos twitter archive, some rating numerators are too high and does not make sense regarding the denominator value.</li>
+<li>REMOVED ! - This quality is no longer part of our study -</li>
 <li>WeRateDgos twitter archive - in some cases, the relevant rating information, consequently rating_numerator and rating_denominator, have not been extracted.</li>
 <li>WeRateDgos twitter archive - We have "None" as name even if, sometimes, there is an available name in the text. So few names are missing and could be retrieved.</li>
 <li>WeRateDgos twitter archive - We have missing dog stages, meaning stages not properly extracted. This is the case for "puppo", "doggo" and "pupper".</li>
@@ -13309,6 +13309,7 @@ We focus on the issues according to the objective we had for the insights : Try 
 <li>WeRateDgos twitter archive - timestamp is using string type.</li>
 <li>Tweets images predictions - We have rows which are not dogs images predictions.</li>
 <li>Data retrieved via twitter API - "created_at" column type is not timestamp.</li>
+<li>Tweets images predictions - predictions and the associated confidences are spread over several columns.</li>
 </ol>
 
 </div>
@@ -13338,7 +13339,7 @@ We focus on the issues according to the objective we had for the insights : Try 
 <h4 id="Approach">Approach<a class="anchor-link" href="#Approach">&#182;</a></h4><ol>
 <li>First, we address the missing data and completness issues (Quality issues 1, 2, 4, 5, 6, 9)</li>
 <li>Then we resolve the tidiness problems we identified.</li>
-<li>Finally we will correct the quality issues (Quality issues 3, 7, 8, 10)</li>
+<li>Finally we will correct the quality issues (Quality issues 7, 8, 10)</li>
 </ol>
 
 </div>
@@ -13402,16 +13403,16 @@ We used this approach a lot during the cleaning.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Merging-the-twitter-enhanced-archive-dataframe-and-the-twitter-dataframe-built-from-the-APIs">Merging the twitter enhanced archive dataframe and the twitter dataframe built from the APIs<a class="anchor-link" href="#Merging-the-twitter-enhanced-archive-dataframe-and-the-twitter-dataframe-built-from-the-APIs">&#182;</a></h4>
+<h4 id="Merging-all-the-3-datasets-for-a-master-dataset">Merging all the 3 datasets for a master dataset<a class="anchor-link" href="#Merging-all-the-3-datasets-for-a-master-dataset">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is no need to have 2 dataframes for those informations. So we merge the twitter enhanced archive already cleaned <code>df_archive_clean</code> with the data collected via a twitter API, also already cleaned <code>df_twitter_clean</code>.<br>
-From <code>df_twitter_clean</code>, we add the columns retweet_count and favorite_count to <code>df_archive_clean</code>.<br>
-We keep the prediction dataframe <code>df_image_clean</code> as standalone. We may have several images for the same tweet. So any required image could be referenced based on the tweet_id.</p>
+<p>We merge the twitter enhanced archive already cleaned <code>df_archive_clean</code> with the data collected via a twitter API, also already cleaned <code>df_twitter_clean</code>.<br>
+Then we merge the result to the prediction dataframe <code>df_image_clean</code>.
+All on the <code>tweet_id</code> column.</p>
 
 </div>
 </div>
@@ -13435,8 +13436,8 @@ We keep the prediction dataframe <code>df_image_clean</code> as standalone. We m
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>We store the dataframes into csv files: the twitter data in <code>twitter_archive_master.csv</code> and the images predictions data in <code>images_prediction_cleaned.csv</code></li>
-<li>We store the dataframes into SQLite database.<br>
+<li>We store the master dataframe into a csv files:  <code>twitter_archive_master.csv</code> </li>
+<li>We also store the dataframes into a SQLite database.<br>
 We've learnt the way to do from here : <a href="https://stackoverflow.com/questions/50803109/how-to-store-pandas-dataframe-in-sqlite-db#50803252">https://stackoverflow.com/questions/50803109/how-to-store-pandas-dataframe-in-sqlite-db#50803252</a></li>
 </ol>
 
@@ -13462,12 +13463,12 @@ We use categorical plots, as discovered from here : <a href="https://seaborn.pyd
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Generate the HTML version of this notebook</span>
 <span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
-<span class="n">call</span><span class="p">([</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;nbconvert&#39;</span><span class="p">,</span> <span class="s1">&#39;Wrangle_act.ipynb&#39;</span><span class="p">])</span>
+<span class="n">call</span><span class="p">([</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;nbconvert&#39;</span><span class="p">,</span> <span class="s1">&#39;wrangle_report.ipynb&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13480,7 +13481,7 @@ We use categorical plots, as discovered from here : <a href="https://seaborn.pyd
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
