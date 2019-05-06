@@ -1,8 +1,16 @@
 # wrangle_and_analyze_data
-Wrangle WeRateDogs Twitter data to create interesting and trustworthy analyses and visualizations.
+Gather, Wrangle and clean WeRateDogs Twitter data to create interesting and trustworthy analyses and visualizations.
+
+# Data Gathering, Assessment and cleaning process
+The step by step is described in the report [wrangle_report.ipynb](wrangle_report.ipynb)
+You can also load this report through nbviewer with this [link](https://nbviewer.jupyter.org/github/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_report.ipynb)
+
+The main notebook containing all the gathering, assessment and cleaning is [wrangle_act.ipynb](wrangle_act.ipynb)
+You can also load it through nbviewer here : [wrangle_act.ipynb](https://github.com/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_act.ipynb)
 
 # Installation
-1. [Download and install Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) I suggest Miniconda which is quick and easy
+1. [Download and install Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html).
+I suggest to select [Miniconda](https://docs.conda.io/en/latest/miniconda.html) which is quick and easy to install.
 
 2. Install all the other dependencies using the "environment.yml" file included :
 ```
@@ -19,5 +27,3 @@ ${HOME}/miniconda/bin/conda activate wrangling
 $ jupyter-notebook wrangle_act.ipynb
 ```
 
-# Data Assessment and cleaning process
-It is described in wrangle_report.ipynb or wrangle_report.html
