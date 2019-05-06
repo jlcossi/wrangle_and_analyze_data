@@ -2,10 +2,10 @@
 Gather, Wrangle and clean WeRateDogs Twitter data to create interesting and trustworthy analyses and visualizations.
 
 # Data Gathering, Assessment and cleaning process
-The step by step is described in the report [wrangle_report.ipynb](wrangle_report.ipynb)
-You can also load this report through nbviewer with this [link](https://nbviewer.jupyter.org/github/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_report.ipynb)
+The step by step is described in the report [wrangle_report.ipynb](wrangle_report.ipynb).   
+You can also load this report through nbviewer with this [wrangle_report.ipynb](https://nbviewer.jupyter.org/github/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_report.ipynb)
 
-The main notebook containing all the gathering, assessment and cleaning is [wrangle_act.ipynb](wrangle_act.ipynb)
+The main notebook containing all the gathering, assessment and cleaning is [wrangle_act.ipynb](wrangle_act.ipynb).  
 You can also load it through nbviewer here : [wrangle_act.ipynb](https://github.com/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_act.ipynb)
 
 # Installation
