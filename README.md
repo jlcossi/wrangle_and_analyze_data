@@ -6,7 +6,7 @@ The step by step is described in the report [wrangle_report.ipynb](wrangle_repor
 You can also load this report through nbviewer with this [wrangle_report.ipynb](https://nbviewer.jupyter.org/github/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_report.ipynb)
 
 The main notebook containing all the gathering, assessment and cleaning is [wrangle_act.ipynb](wrangle_act.ipynb).  
-You can also load it through nbviewer here : [wrangle_act.ipynb](https://github.com/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_act.ipynb)
+You can also load it through nbviewer here : [wrangle_act.ipynb](https://nbviewer.jupyter.org/github/jlcossi/wrangle_and_analyze_twitter_data/blob/master/wrangle_act.ipynb)
 
 # Installation
 1. [Download and install Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html).
